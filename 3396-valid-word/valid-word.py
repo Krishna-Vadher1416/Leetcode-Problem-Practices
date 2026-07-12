@@ -1,22 +1,23 @@
 class Solution:
     def isValid(self, word: str) -> bool:
-        if len(word) < 3 :
+        if len(word) < 3:
             return False
-        vowels = ["a","e","i","o","u"]
-        vow = False
-        con = False
+            
+        vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+        has_vow = False
+        has_con = False
 
-        
-
-        for i in word :
-            if not i.isalnum():
+        for char in word:
+            
+            if not char.isalnum():
                 return False
             
-            if i.lower() in vowels :
-                vow= True 
-            elif not i.isdecimal() :
-                con = True
-        return vow and con
-
-
             
+            if char.isalpha():
+                if char in vowels:
+                    has_vow = True
+                else:
+                    has_con = True
+                    
+        
+        return has_vow and has_con
