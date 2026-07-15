@@ -5,8 +5,8 @@ class Solution:
         """
         if k == 0:
             return 0    
-        n = len(nums) 
-        k = k % n
+         
+        k = k % len(nums)
 
         nums.reverse()
 
